@@ -33,7 +33,7 @@ const Footer = () => {
       color="var(--beige-light)"
       py={16}
     >
-      <Container maxW="1200px">
+      <Container maxW="1200px" px={{ base: 4, md: 6 }}>
         <MotionFlex
           direction={{ base: 'column', lg: 'row' }}
           justify="space-between"

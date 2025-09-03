@@ -89,7 +89,7 @@ const HomePage = () => {
           className="parallax-element"
         />
         
-        <Container maxW="1200px" position="relative" zIndex={1}>
+        <Container maxW="1200px" position="relative" zIndex={1} px={{ base: 4, md: 6 }}>
           <Flex
             direction={{ base: 'column', lg: 'row' }}
             align="center"
@@ -184,6 +184,7 @@ const HomePage = () => {
               w={{ base: '100%', lg: '50%' }}
               h="600px"
               display={{ base: 'none', lg: 'block' }}
+              px={4}
             >
               {services.map((service, index) => (
                 <MotionBox
@@ -247,7 +248,7 @@ const HomePage = () => {
         bg="var(--beige-dusty)"
         position="relative"
       >
-        <Container maxW="1200px">
+        <Container maxW="1200px" px={{ base: 4, md: 6 }}>
           <Flex
             direction={{ base: 'column', md: 'row' }}
             justify="space-between"
@@ -303,7 +304,7 @@ const HomePage = () => {
         position="relative"
         overflow="hidden"
       >
-        <Container maxW="1200px">
+        <Container maxW="1200px" px={{ base: 4, md: 6 }}>
           <Flex
             direction={{ base: 'column', lg: 'row' }}
             align="center"
@@ -410,7 +411,7 @@ const HomePage = () => {
         bg="var(--beige-light)"
         position="relative"
       >
-        <Container maxW="1200px">
+        <Container maxW="1200px" px={{ base: 4, md: 6 }}>
           <MotionBox
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}

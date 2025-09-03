@@ -53,7 +53,7 @@ const Header = () => {
         px={{ base: 6, md: 12 }}
         transition="all 0.3s ease"
       >
-        <Flex justify="space-between" align="center" maxW="1200px" mx="auto">
+        <Flex justify="space-between" align="center" maxW="1200px" mx="auto" px={{ base: 4, md: 6 }}>
           {/* Логотип */}
           <MotionBox
             whileHover={{ scale: 1.02 }}
