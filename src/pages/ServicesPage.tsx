@@ -1,21 +1,27 @@
 import {
   Box,
   Container,
-  Heading,
   Text,
   VStack,
   HStack,
-  Grid,
-  Badge,
   Button,
+  Flex,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
-// import { CheckIcon } from '@chakra-ui/icons'
 
 const MotionBox = motion(Box)
 
 const ServicesPage = () => {
+  const [scrollY, setScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   const services = [
     {
       title: 'Подбор персонала',
@@ -28,7 +34,8 @@ const ServicesPage = () => {
         'Гарантия на подобранного сотрудника',
       ],
       price: 'от 15% от годовой зарплаты',
-      color: 'blue',
+      position: { top: '5%', left: '10%' },
+      delay: 0,
     },
     {
       title: 'HR-консалтинг',
@@ -41,7 +48,8 @@ const ServicesPage = () => {
         'Внедрение KPI и системы мотивации',
       ],
       price: 'от 50 000 ₽/месяц',
-      color: 'green',
+      position: { top: '15%', right: '5%' },
+      delay: 0.1,
     },
     {
       title: 'Обучение сотрудников',
@@ -54,7 +62,8 @@ const ServicesPage = () => {
         'Сертификация сотрудников',
       ],
       price: 'от 25 000 ₽/день',
-      color: 'purple',
+      position: { top: '40%', left: '5%' },
+      delay: 0.2,
     },
     {
       title: 'Аутсорсинг HR',
@@ -67,7 +76,8 @@ const ServicesPage = () => {
         'Соблюдение трудового законодательства',
       ],
       price: 'от 30 000 ₽/месяц',
-      color: 'orange',
+      position: { top: '50%', right: '10%' },
+      delay: 0.3,
     },
     {
       title: 'Оценка персонала',
@@ -80,7 +90,8 @@ const ServicesPage = () => {
         'Разработка планов развития',
       ],
       price: 'от 20 000 ₽/сотрудник',
-      color: 'teal',
+      position: { bottom: '25%', left: '15%' },
+      delay: 0.4,
     },
     {
       title: 'Адаптация персонала',
@@ -93,7 +104,8 @@ const ServicesPage = () => {
         'Обратная связь и корректировка',
       ],
       price: 'от 15 000 ₽/сотрудник',
-      color: 'pink',
+      position: { bottom: '10%', right: '5%' },
+      delay: 0.5,
     },
   ]
 
@@ -102,211 +114,479 @@ const ServicesPage = () => {
       step: '1',
       title: 'Консультация',
       description: 'Обсуждаем ваши потребности и цели',
+      delay: 0,
     },
     {
       step: '2',
       title: 'Анализ',
       description: 'Изучаем специфику вашего бизнеса',
+      delay: 0.1,
     },
     {
       step: '3',
       title: 'Планирование',
       description: 'Разрабатываем индивидуальный план',
+      delay: 0.2,
     },
     {
       step: '4',
       title: 'Реализация',
       description: 'Выполняем поставленные задачи',
+      delay: 0.3,
     },
     {
       step: '5',
       title: 'Контроль',
       description: 'Отслеживаем результаты и корректируем',
+      delay: 0.4,
     },
   ]
 
   return (
-    <Box>
+    <Box pt="100px">
       {/* Hero Section */}
       <Box
-        bgGradient="linear(to-r, blue.600, blue.800)"
-        color="white"
-        py={20}
+        minH="80vh"
+        bg="var(--beige-light)"
+        position="relative"
+        overflow="hidden"
       >
-        <Container maxW="1200px">
-          <MotionBox
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            textAlign="center"
+        {/* Анимированный фон */}
+        <Box
+          position="absolute"
+          top={0}
+          left={0}
+          right={0}
+          bottom={0}
+          style={{
+            transform: `translateY(${scrollY * 0.3}px)`,
+          }}
+          className="parallax-element"
+        >
+          <svg
+            width="100%"
+            height="100%"
+            viewBox="0 0 1000 1000"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            opacity={0.1}
           >
-            <Heading size="2xl" mb={6}>
-              Наши услуги
-            </Heading>
-            <Text fontSize="xl" color="gray.200" maxW="800px" mx="auto">
-              Полный спектр HR-услуг для развития вашего бизнеса. 
-              От подбора персонала до стратегического консалтинга.
-            </Text>
-          </MotionBox>
+            <defs>
+              <pattern id="services-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="var(--navy-deep)" strokeWidth="1"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#services-grid)" />
+          </svg>
+        </Box>
+        
+        <Container maxW="1200px" position="relative" zIndex={1} px={{ base: 4, md: 6 }}>
+          <Flex
+            direction={{ base: 'column', lg: 'row' }}
+            align="center"
+            justify="space-between"
+            minH="80vh"
+            gap={12}
+          >
+            <VStack
+              align={{ base: 'center', lg: 'start' }}
+              gap={8}
+              maxW={{ base: '100%', lg: '60%' }}
+            >
+              <MotionBox
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <VStack gap={6} align={{ base: 'center', lg: 'start' }}>
+                  <Text
+                    className="heading-premium"
+                    fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
+                    color="var(--navy-deep)"
+                    textAlign={{ base: 'center', lg: 'left' }}
+                  >
+                    Наши услуги
+                  </Text>
+                  <Text
+                    className="text-premium"
+                    fontSize={{ base: 'lg', md: 'xl' }}
+                    color="var(--gray-medium)"
+                    textAlign={{ base: 'center', lg: 'left' }}
+                    maxW="600px"
+                  >
+                    Полный спектр HR-услуг для развития вашего бизнеса. 
+                    От подбора персонала до стратегического консалтинга.
+                  </Text>
+                  <Text
+                    className="text-secondary"
+                    fontSize={{ base: 'md', md: 'lg' }}
+                    color="var(--gray-dark)"
+                    textAlign={{ base: 'center', lg: 'left' }}
+                    maxW="500px"
+                  >
+                    Профессиональные решения для вашего HR-отдела с гарантированным результатом.
+                  </Text>
+                </VStack>
+              </MotionBox>
+
+              <MotionBox
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <HStack gap={4} flexWrap="wrap" justify={{ base: 'center', lg: 'start' }}>
+                  <Button className="premium-button" size="lg">
+                    Выбрать услугу
+                  </Button>
+                  <Button className="accent-button" size="lg">
+                    Получить консультацию
+                  </Button>
+                </HStack>
+              </MotionBox>
+            </VStack>
+            
+            {/* Асимметричные блоки услуг */}
+            <Box
+              position="relative"
+              w={{ base: '100%', lg: '50%' }}
+              h="600px"
+              display={{ base: 'none', lg: 'block' }}
+              px={4}
+            >
+              {services.slice(0, 4).map((service) => (
+                <MotionBox
+                  key={service.title}
+                  position="absolute"
+                  {...service.position}
+                  initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+                  animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                  transition={{ 
+                    type: "spring", 
+                    stiffness: 100, 
+                    damping: 15,
+                    delay: service.delay + 0.5
+                  }}
+                  whileHover={{ 
+                    scale: 1.05, 
+                    rotate: 2,
+                    transition: { duration: 0.2 }
+                  }}
+                >
+                  <Box
+                    className="minimal-card"
+                    p={6}
+                    w="200px"
+                    cursor="pointer"
+                  >
+                    <VStack gap={3} align="start">
+                      <Text fontSize="2xl">{service.icon}</Text>
+                      <Text
+                        className="heading-premium"
+                        fontSize="md"
+                        color="var(--navy-deep)"
+                      >
+                        {service.title}
+                      </Text>
+                      <Text
+                        className="text-secondary"
+                        fontSize="xs"
+                        color="var(--gray-medium)"
+                      >
+                        {service.price}
+                      </Text>
+                    </VStack>
+                  </Box>
+                </MotionBox>
+              ))}
+            </Box>
+          </Flex>
         </Container>
       </Box>
 
       {/* Services Grid */}
-      <Box py={20}>
-        <Container maxW="1200px">
-          <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} gap={8}>
-            {services.map((service, index) => (
-              <MotionBox
-                key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <Box
-                  border="1px solid"
-                  borderColor="gray.200"
-                  borderRadius="lg"
-                  p={8}
-                  _hover={{ 
-                    boxShadow: 'xl',
-                    transform: 'translateY(-5px)',
-                    transition: 'all 0.3s ease'
-                  }}
-                  height="100%"
+      <Box
+        py={24}
+        bg="var(--beige-dusty)"
+        position="relative"
+      >
+        <Container maxW="1200px" px={{ base: 4, md: 6 }}>
+          <VStack gap={16}>
+            <MotionBox
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              textAlign="center"
+            >
+              <VStack gap={6}>
+                <Text
+                  className="heading-premium"
+                  fontSize={{ base: '3xl', md: '4xl' }}
+                  color="var(--navy-deep)"
                 >
-                  <VStack gap={6} align="stretch" height="100%">
-                    <VStack gap={4} align="start">
-                      <HStack gap={4}>
-                        <Box fontSize="3xl">{service.icon}</Box>
-                        <Badge colorScheme={service.color} variant="solid" px={3} py={1}>
-                          {service.price}
-                        </Badge>
-                      </HStack>
-                      <Heading size="md">{service.title}</Heading>
-                      <Text color="gray.600">{service.description}</Text>
-                    </VStack>
+                  Полный спектр услуг
+                </Text>
+                <Text
+                  className="text-premium"
+                  fontSize={{ base: 'lg', md: 'xl' }}
+                  color="var(--gray-medium)"
+                  maxW="600px"
+                >
+                  От подбора персонала до стратегического консалтинга
+                </Text>
+              </VStack>
+            </MotionBox>
 
-                    <VStack gap={2} align="stretch" flex="1">
-                      {service.features.map((feature, featureIndex) => (
-                        <HStack key={featureIndex} gap={2}>
-                          <Text color={`${service.color}.500`}>✓</Text>
-                          <Text fontSize="sm">{feature}</Text>
+            <Flex
+              direction={{ base: 'column', md: 'row' }}
+              gap={8}
+              justify="center"
+              align="stretch"
+              w="100%"
+              flexWrap="wrap"
+            >
+              {services.map((service, index) => (
+                <MotionBox
+                  key={service.title}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ 
+                    duration: 0.8, 
+                    delay: service.delay,
+                    type: "spring",
+                    stiffness: 100
+                  }}
+                  whileHover={{ 
+                    y: -10,
+                    transition: { duration: 0.3 }
+                  }}
+                  flex="1"
+                  minW="300px"
+                  maxW="400px"
+                >
+                  <Box
+                    className="minimal-card"
+                    p={8}
+                    h="100%"
+                  >
+                    <VStack gap={6} align="stretch" h="100%">
+                      <VStack gap={4} align="start">
+                        <HStack gap={4} align="start">
+                          <Text fontSize="3xl">{service.icon}</Text>
+                          <VStack gap={2} align="start" flex="1">
+                            <Text
+                              className="heading-premium"
+                              fontSize="lg"
+                              color="var(--navy-deep)"
+                            >
+                              {service.title}
+                            </Text>
+                            <Text
+                              className="text-secondary"
+                              fontSize="sm"
+                              color="var(--terracotta)"
+                              fontWeight="semibold"
+                            >
+                              {service.price}
+                            </Text>
+                          </VStack>
                         </HStack>
-                      ))}
-                    </VStack>
+                        <Text
+                          className="text-premium"
+                          color="var(--gray-medium)"
+                        >
+                          {service.description}
+                        </Text>
+                      </VStack>
 
-                    <RouterLink to="/contact">
-                      <Button
-                        colorScheme={service.color}
-                        variant="outline"
-                        size="sm"
-                      >
-                        Заказать услугу
-                      </Button>
-                    </RouterLink>
-                  </VStack>
-                </Box>
-              </MotionBox>
-            ))}
-          </Grid>
+                      <VStack gap={3} align="stretch" flex="1">
+                        {service.features.map((feature) => (
+                          <HStack key={feature} gap={3} align="start">
+                            <Text
+                              color="var(--terracotta)"
+                              fontSize="sm"
+                              mt={1}
+                            >
+                              ✓
+                            </Text>
+                            <Text
+                              className="text-secondary"
+                              fontSize="sm"
+                              color="var(--gray-medium)"
+                            >
+                              {feature}
+                            </Text>
+                          </HStack>
+                        ))}
+                      </VStack>
+
+                      <RouterLink to="/contact">
+                        <Button
+                          className="accent-button"
+                          size="sm"
+                          width="full"
+                        >
+                          Заказать услугу
+                        </Button>
+                      </RouterLink>
+                    </VStack>
+                  </Box>
+                </MotionBox>
+              ))}
+            </Flex>
+          </VStack>
         </Container>
       </Box>
 
       {/* Process Section */}
-      <Box py={20} bg="gray.50">
-        <Container maxW="1200px">
-          <VStack gap={12}>
+      <Box
+        py={24}
+        bg="var(--beige-light)"
+        position="relative"
+      >
+        <Container maxW="1200px" px={{ base: 4, md: 6 }}>
+          <VStack gap={16}>
             <MotionBox
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8 }}
               textAlign="center"
             >
-              <Heading size="xl" mb={4}>
-                Как мы работаем
-              </Heading>
-              <Text fontSize="lg" color="gray.600" maxW="600px">
-                Простой и понятный процесс сотрудничества
-              </Text>
+              <VStack gap={6}>
+                <Text
+                  className="heading-premium"
+                  fontSize={{ base: '3xl', md: '4xl' }}
+                  color="var(--navy-deep)"
+                >
+                  Как мы работаем
+                </Text>
+                <Text
+                  className="text-premium"
+                  fontSize={{ base: 'lg', md: 'xl' }}
+                  color="var(--gray-medium)"
+                  maxW="600px"
+                >
+                  Простой и понятный процесс сотрудничества
+                </Text>
+              </VStack>
             </MotionBox>
 
-            <Grid templateColumns={{ base: '1fr', md: 'repeat(5, 1fr)' }} gap={8}>
-              {process.map((step, index) => (
+            <Flex
+              direction={{ base: 'column', md: 'row' }}
+              gap={8}
+              justify="center"
+              align="center"
+              w="100%"
+              flexWrap="wrap"
+            >
+              {process.map((step) => (
                 <MotionBox
                   key={step.step}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ 
+                    duration: 0.8, 
+                    delay: step.delay,
+                    type: "spring",
+                    stiffness: 100
+                  }}
+                  whileHover={{ 
+                    y: -5,
+                    transition: { duration: 0.3 }
+                  }}
+                  flex="1"
+                  minW="150px"
+                  maxW="200px"
                 >
-                  <VStack gap={4} textAlign="center">
+                  <VStack gap={6} textAlign="center">
                     <Box
-                      bg="blue.600"
-                      color="white"
+                      className="minimal-card"
                       borderRadius="full"
-                      w={12}
-                      h={12}
+                      w={16}
+                      h={16}
                       display="flex"
                       alignItems="center"
                       justifyContent="center"
-                      fontWeight="bold"
-                      fontSize="lg"
+                      bg="var(--terracotta)"
+                      color="var(--beige-light)"
                     >
-                      {step.step}
+                      <Text
+                        className="heading-premium"
+                        fontSize="lg"
+                      >
+                        {step.step}
+                      </Text>
                     </Box>
-                    <Heading size="sm">{step.title}</Heading>
-                    <Text color="gray.600" fontSize="sm">
-                      {step.description}
-                    </Text>
+                    <VStack gap={2}>
+                      <Text
+                        className="heading-premium"
+                        fontSize="md"
+                        color="var(--navy-deep)"
+                      >
+                        {step.title}
+                      </Text>
+                      <Text
+                        className="text-secondary"
+                        fontSize="sm"
+                        color="var(--gray-medium)"
+                      >
+                        {step.description}
+                      </Text>
+                    </VStack>
                   </VStack>
                 </MotionBox>
               ))}
-            </Grid>
+            </Flex>
           </VStack>
         </Container>
       </Box>
 
       {/* CTA Section */}
       <Box
-        bgGradient="linear(to-r, blue.600, blue.800)"
-        color="white"
-        py={16}
+        py={24}
+        bg="var(--navy-deep)"
+        position="relative"
       >
-        <Container maxW="1200px">
+        <Container maxW="1200px" px={{ base: 4, md: 6 }}>
           <MotionBox
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             textAlign="center"
           >
-            <Heading size="xl" mb={4}>
-              Готовы обсудить ваш проект?
-            </Heading>
-            <Text fontSize="lg" mb={8} color="gray.200">
-              Свяжитесь с нами для получения персональной консультации
-            </Text>
-            <HStack gap={4} justify="center">
-              <RouterLink to="/contact">
-                <Button
-                  size="lg"
-                  colorScheme="white"
-                  variant="solid"
-                  bg="white"
-                  color="blue.600"
-                  _hover={{ bg: 'gray.100' }}
+            <VStack gap={12}>
+              <VStack gap={6}>
+                <Text
+                  className="heading-premium"
+                  fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
+                  color="var(--beige-light)"
                 >
-                  Получить консультацию
+                  Готовы обсудить ваш проект?
+                </Text>
+                <Text
+                  className="text-premium"
+                  fontSize={{ base: 'lg', md: 'xl' }}
+                  color="var(--beige-light)"
+                  maxW="600px"
+                >
+                  Свяжитесь с нами для получения персональной консультации
+                </Text>
+              </VStack>
+              <HStack gap={6} flexWrap="wrap" justify="center">
+                <RouterLink to="/contact">
+                  <Button className="premium-button" size="lg">
+                    Получить консультацию
+                  </Button>
+                </RouterLink>
+                <Button className="accent-button" size="lg">
+                  Скачать презентацию
                 </Button>
-              </RouterLink>
-              <Button
-                size="lg"
-                variant="outline"
-                borderColor="white"
-                color="white"
-                _hover={{ bg: 'white', color: 'blue.600' }}
-              >
-                Скачать презентацию
-              </Button>
-            </HStack>
+              </HStack>
+            </VStack>
           </MotionBox>
         </Container>
       </Box>
