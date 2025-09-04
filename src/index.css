@@ -1,6 +1,9 @@
 /* Импорт премиальных шрифтов */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
 
+/* Импорт стилей компонентов */
+@import './styles/components/index.css';
+
 /* CSS переменные для премиальной цветовой схемы */
 :root {
   /* Основные бежевые тона */

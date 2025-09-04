@@ -1,0 +1,405 @@
+/* HomePage Component Styles */
+
+.homepage-container {
+  padding-top: 100px;
+}
+
+/* Hero Section */
+.homepage-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--beige-light);
+}
+
+.homepage-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230A2540' fill-opacity='0.1'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm-20-18c9.941 0 18 8.059 18 18s-8.059 18-18 18S-8 39.941-8 30s8.059-18 18-18z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  transform: translateY(0px);
+  transition: transform 0.3s ease;
+}
+
+.homepage-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.homepage-hero-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80vh;
+  gap: 4rem;
+}
+
+.homepage-hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 100%;
+  text-align: center;
+}
+
+.homepage-hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  line-height: 0.9;
+  margin-bottom: 1.5rem;
+  color: var(--navy-deep);
+}
+
+.homepage-hero-title-accent {
+  color: var(--terracotta);
+}
+
+.homepage-hero-description {
+  font-size: 1.125rem;
+  color: var(--gray-dark);
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.homepage-hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.homepage-hero-services {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: none;
+  padding: 0 1rem;
+}
+
+.homepage-service-card {
+  position: absolute;
+  background: var(--white-pure);
+  border: 1px solid var(--beige-dusty);
+  border-radius: 8px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-subtle);
+}
+
+.homepage-service-card:hover {
+  box-shadow: var(--shadow-medium);
+  border-color: var(--terracotta);
+  transform: translateY(-2px);
+}
+
+.homepage-service-card.large {
+  width: 280px;
+}
+
+.homepage-service-card.medium {
+  width: 220px;
+}
+
+.homepage-service-card.small {
+  width: 180px;
+}
+
+.homepage-service-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.homepage-service-title {
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--navy-deep);
+}
+
+.homepage-service-title.large {
+  font-size: 1.125rem;
+}
+
+.homepage-service-title.medium {
+  font-size: 1rem;
+}
+
+.homepage-service-description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--gray-dark);
+}
+
+/* Stats Section */
+.homepage-stats {
+  padding: 6rem 0;
+  background: var(--beige-dusty);
+  position: relative;
+}
+
+.homepage-stats-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.homepage-stats-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+
+.homepage-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.homepage-stat-item:hover {
+  transform: scale(1.1);
+}
+
+.homepage-stat-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: var(--navy-deep);
+}
+
+.homepage-stat-label {
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--gray-dark);
+}
+
+/* Testimonials Section */
+.homepage-testimonials {
+  padding: 6rem 0;
+  background: var(--navy-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+.homepage-testimonials-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.homepage-testimonials-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  min-height: 500px;
+}
+
+.homepage-testimonial-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 100%;
+  text-align: center;
+}
+
+.homepage-testimonial-quote {
+  font-size: 1.25rem;
+  color: var(--beige-light);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.homepage-testimonial-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.homepage-testimonial-author-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.125rem;
+  color: var(--white-pure);
+}
+
+.homepage-testimonial-author-title {
+  font-size: 0.875rem;
+  color: var(--beige-dusty);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.homepage-testimonial-logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-testimonial-logo-card {
+  background: var(--white-pure);
+  border: 1px solid var(--beige-dusty);
+  border-radius: 8px;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: var(--shadow-subtle);
+}
+
+.homepage-testimonial-logo-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  color: var(--navy-deep);
+  letter-spacing: 3px;
+}
+
+.homepage-testimonial-logo-subtitle {
+  font-size: 0.875rem;
+  color: var(--gray-dark);
+  margin-top: 0.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* CTA Section */
+.homepage-cta {
+  padding: 6rem 0;
+  background: var(--beige-light);
+  position: relative;
+}
+
+.homepage-cta-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.homepage-cta-layout {
+  text-align: center;
+}
+
+.homepage-cta-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.homepage-cta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.homepage-cta-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: var(--navy-deep);
+  line-height: 1.1;
+}
+
+.homepage-cta-title-accent {
+  color: var(--terracotta);
+}
+
+.homepage-cta-description {
+  font-size: 1.125rem;
+  color: var(--gray-dark);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.homepage-cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .homepage-hero-title {
+    font-size: 4rem;
+  }
+  
+  .homepage-hero-description {
+    font-size: 1.25rem;
+  }
+  
+  .homepage-stat-number {
+    font-size: 4rem;
+  }
+  
+  .homepage-testimonial-quote {
+    font-size: 1.5rem;
+  }
+  
+  .homepage-cta-title {
+    font-size: 4rem;
+  }
+  
+  .homepage-cta-description {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .homepage-hero-layout {
+    flex-direction: row;
+  }
+  
+  .homepage-hero-text {
+    align-items: flex-start;
+    max-width: 50%;
+    text-align: left;
+  }
+  
+  .homepage-hero-services {
+    display: block;
+    width: 50%;
+  }
+  
+  .homepage-stats-layout {
+    flex-direction: row;
+  }
+  
+  .homepage-testimonials-layout {
+    flex-direction: row;
+  }
+  
+  .homepage-testimonial-text {
+    align-items: flex-start;
+    max-width: 60%;
+    text-align: left;
+  }
+  
+  .homepage-hero-title {
+    font-size: 5rem;
+  }
+  
+  .homepage-cta-title {
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .homepage-hero-title {
+    font-size: 6rem;
+  }
+}
