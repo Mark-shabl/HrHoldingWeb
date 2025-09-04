@@ -1,0 +1,480 @@
+/* ContactPage Component Styles */
+
+.contactpage-container {
+  padding-top: 100px;
+}
+
+/* Hero Section */
+.contactpage-hero {
+  min-height: 80vh;
+  background: var(--beige-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.contactpage-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(0px);
+  transition: transform 0.3s ease;
+}
+
+.contactpage-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.contactpage-hero-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80vh;
+  gap: 3rem;
+}
+
+.contactpage-hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 100%;
+  text-align: center;
+}
+
+.contactpage-hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: var(--navy-deep);
+  text-align: center;
+}
+
+.contactpage-hero-description {
+  font-size: 1.125rem;
+  color: var(--gray-medium);
+  text-align: center;
+  max-width: 600px;
+}
+
+.contactpage-hero-subtitle {
+  font-size: 1rem;
+  color: var(--gray-dark);
+  text-align: center;
+  max-width: 500px;
+}
+
+.contactpage-hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contactpage-hero-contacts {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: none;
+  padding: 0 1rem;
+}
+
+.contactpage-hero-contact-card {
+  position: absolute;
+  background: var(--white-pure);
+  border: 1px solid var(--beige-dusty);
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 220px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-subtle);
+}
+
+.contactpage-hero-contact-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.contactpage-hero-contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.contactpage-hero-contact-icon {
+  font-size: 2rem;
+}
+
+.contactpage-hero-contact-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.125rem;
+  color: var(--navy-deep);
+}
+
+.contactpage-hero-contact-detail {
+  font-size: 0.875rem;
+  color: var(--gray-medium);
+}
+
+/* Contact Form Section */
+.contactpage-form {
+  padding: 6rem 0;
+  background: var(--beige-dusty);
+  position: relative;
+}
+
+.contactpage-form-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.contactpage-form-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4rem;
+  min-height: 600px;
+}
+
+.contactpage-form-section {
+  flex: 1;
+}
+
+.contactpage-form-card {
+  background: var(--white-pure);
+  border: 1px solid var(--beige-dusty);
+  border-radius: 8px;
+  padding: 2rem;
+  width: 100%;
+  box-shadow: var(--shadow-subtle);
+}
+
+.contactpage-form-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.contactpage-form-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.contactpage-form-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  color: var(--terracotta);
+}
+
+.contactpage-form-description {
+  color: var(--navy-deep);
+}
+
+.contactpage-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.contactpage-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+.contactpage-form-label {
+  color: var(--navy-deep);
+  font-weight: 600;
+}
+
+.contactpage-form-input {
+  background: var(--beige-light);
+  border: 1px solid var(--beige-warm);
+  border-radius: 4px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contactpage-form-input:focus {
+  outline: none;
+  border-color: var(--terracotta);
+  box-shadow: 0 0 0 1px var(--terracotta);
+}
+
+.contactpage-form-textarea {
+  background: var(--beige-light);
+  border: 1px solid var(--beige-warm);
+  border-radius: 4px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  min-height: 120px;
+  resize: vertical;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contactpage-form-textarea:focus {
+  outline: none;
+  border-color: var(--terracotta);
+  box-shadow: 0 0 0 1px var(--terracotta);
+}
+
+.contactpage-form-submit {
+  width: 100%;
+}
+
+.contactpage-info-section {
+  flex: 1;
+}
+
+.contactpage-info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.contactpage-info-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.contactpage-info-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  color: var(--terracotta);
+}
+
+.contactpage-info-description {
+  color: var(--navy-deep);
+}
+
+.contactpage-info-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.contactpage-info-feature {
+  transition: transform 0.3s ease;
+}
+
+.contactpage-info-feature:hover {
+  transform: translateY(-2px);
+}
+
+.contactpage-info-feature-card {
+  background: var(--white-pure);
+  border: 1px solid var(--beige-dusty);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.contactpage-info-feature-content {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.contactpage-info-feature-icon {
+  background: var(--white-pure);
+  border: 1px solid var(--beige-dusty);
+  border-radius: 50%;
+  padding: 0.75rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.contactpage-info-feature-icon-text {
+  font-size: 1.125rem;
+}
+
+.contactpage-info-feature-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.contactpage-info-feature-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  color: var(--navy-deep);
+}
+
+.contactpage-info-feature-description {
+  font-size: 0.875rem;
+  color: var(--gray-medium);
+}
+
+.contactpage-info-cta {
+  background: var(--beige-light);
+  border: 2px solid var(--terracotta);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.contactpage-info-cta-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.contactpage-info-cta-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.125rem;
+  color: var(--terracotta);
+}
+
+.contactpage-info-cta-description {
+  color: var(--navy-deep);
+  font-size: 0.875rem;
+}
+
+.contactpage-info-cta-button {
+  /* Button styles are handled by global classes */
+}
+
+/* Map Section */
+.contactpage-map {
+  padding: 6rem 0;
+  background: var(--beige-light);
+  position: relative;
+}
+
+.contactpage-map-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.contactpage-map-layout {
+  text-align: center;
+}
+
+.contactpage-map-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.contactpage-map-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contactpage-map-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: var(--navy-deep);
+}
+
+.contactpage-map-description {
+  font-size: 1.125rem;
+  color: var(--gray-medium);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contactpage-map-container {
+  background: var(--white-pure);
+  border: 1px solid var(--beige-dusty);
+  border-radius: 8px;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--beige-dusty);
+  box-shadow: var(--shadow-subtle);
+}
+
+.contactpage-map-placeholder {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contactpage-map-placeholder-icon {
+  font-size: 4rem;
+}
+
+.contactpage-map-placeholder-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contactpage-map-placeholder-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.125rem;
+  color: var(--navy-deep);
+}
+
+.contactpage-map-placeholder-address {
+  font-size: 0.875rem;
+  color: var(--gray-medium);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .contactpage-hero-title {
+    font-size: 4rem;
+  }
+  
+  .contactpage-hero-description {
+    font-size: 1.25rem;
+  }
+  
+  .contactpage-map-title {
+    font-size: 4rem;
+  }
+  
+  .contactpage-map-description {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contactpage-hero-layout {
+    flex-direction: row;
+  }
+  
+  .contactpage-hero-text {
+    align-items: flex-start;
+    max-width: 60%;
+    text-align: left;
+  }
+  
+  .contactpage-hero-contacts {
+    display: block;
+    width: 50%;
+  }
+  
+  .contactpage-form-layout {
+    flex-direction: row;
+  }
+  
+  .contactpage-hero-title {
+    font-size: 5rem;
+  }
+}

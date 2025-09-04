@@ -1,0 +1,484 @@
+/* ServicesPage Component Styles */
+
+.servicespage-container {
+  padding-top: 100px;
+}
+
+/* Hero Section */
+.servicespage-hero {
+  min-height: 80vh;
+  background: var(--beige-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.servicespage-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(0px);
+  transition: transform 0.3s ease;
+}
+
+.servicespage-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.servicespage-hero-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80vh;
+  gap: 3rem;
+}
+
+.servicespage-hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 100%;
+  text-align: center;
+}
+
+.servicespage-hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: var(--navy-deep);
+  text-align: center;
+}
+
+.servicespage-hero-description {
+  font-size: 1.125rem;
+  color: var(--gray-medium);
+  text-align: center;
+  max-width: 600px;
+}
+
+.servicespage-hero-subtitle {
+  font-size: 1rem;
+  color: var(--gray-dark);
+  text-align: center;
+  max-width: 500px;
+}
+
+.servicespage-hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.servicespage-hero-services {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: none;
+  padding: 0 1rem;
+}
+
+.servicespage-hero-service-card {
+  position: absolute;
+  background: var(--white-pure);
+  border: 1px solid var(--beige-dusty);
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 200px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-subtle);
+}
+
+.servicespage-hero-service-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.servicespage-hero-service-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.servicespage-hero-service-icon {
+  font-size: 2rem;
+}
+
+.servicespage-hero-service-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  color: var(--navy-deep);
+}
+
+.servicespage-hero-service-price {
+  font-size: 0.75rem;
+  color: var(--gray-medium);
+}
+
+/* Services Grid Section */
+.servicespage-services {
+  padding: 6rem 0;
+  background: var(--beige-dusty);
+  position: relative;
+}
+
+.servicespage-services-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.servicespage-services-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.servicespage-services-header {
+  text-align: center;
+}
+
+.servicespage-services-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: var(--navy-deep);
+}
+
+.servicespage-services-description {
+  font-size: 1.125rem;
+  color: var(--gray-medium);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.servicespage-services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.servicespage-service-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  transition: transform 0.3s ease;
+}
+
+.servicespage-service-card:hover {
+  transform: translateY(-10px);
+}
+
+.servicespage-service-card-content {
+  background: var(--white-pure);
+  border: 1px solid var(--beige-dusty);
+  border-radius: 8px;
+  padding: 2rem;
+  height: 100%;
+  box-shadow: var(--shadow-subtle);
+}
+
+.servicespage-service-card-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: stretch;
+  height: 100%;
+}
+
+.servicespage-service-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.servicespage-service-title-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.servicespage-service-icon {
+  font-size: 3rem;
+}
+
+.servicespage-service-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.servicespage-service-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.125rem;
+  color: var(--navy-deep);
+}
+
+.servicespage-service-price {
+  font-size: 0.875rem;
+  color: var(--terracotta);
+  font-weight: 600;
+}
+
+.servicespage-service-description {
+  color: var(--gray-medium);
+}
+
+.servicespage-service-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: stretch;
+  flex: 1;
+}
+
+.servicespage-service-feature {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.servicespage-service-feature-check {
+  color: var(--terracotta);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.servicespage-service-feature-text {
+  font-size: 0.875rem;
+  color: var(--gray-medium);
+}
+
+.servicespage-service-button {
+  width: 100%;
+}
+
+/* Process Section */
+.servicespage-process {
+  padding: 6rem 0;
+  background: var(--beige-light);
+  position: relative;
+}
+
+.servicespage-process-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.servicespage-process-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.servicespage-process-header {
+  text-align: center;
+}
+
+.servicespage-process-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: var(--navy-deep);
+}
+
+.servicespage-process-description {
+  font-size: 1.125rem;
+  color: var(--gray-medium);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.servicespage-process-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.servicespage-process-step {
+  flex: 1;
+  min-width: 150px;
+  max-width: 200px;
+  transition: transform 0.3s ease;
+}
+
+.servicespage-process-step:hover {
+  transform: translateY(-5px);
+}
+
+.servicespage-process-step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.servicespage-process-step-number {
+  background: var(--terracotta);
+  color: var(--beige-light);
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: var(--shadow-subtle);
+}
+
+.servicespage-process-step-number-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.125rem;
+}
+
+.servicespage-process-step-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.servicespage-process-step-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  color: var(--navy-deep);
+}
+
+.servicespage-process-step-description {
+  font-size: 0.875rem;
+  color: var(--gray-medium);
+}
+
+/* CTA Section */
+.servicespage-cta {
+  padding: 6rem 0;
+  background: var(--navy-deep);
+  position: relative;
+}
+
+.servicespage-cta-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.servicespage-cta-layout {
+  text-align: center;
+}
+
+.servicespage-cta-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.servicespage-cta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.servicespage-cta-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: var(--beige-light);
+}
+
+.servicespage-cta-description {
+  font-size: 1.125rem;
+  color: var(--beige-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.servicespage-cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .servicespage-hero-title {
+    font-size: 4rem;
+  }
+  
+  .servicespage-hero-description {
+    font-size: 1.25rem;
+  }
+  
+  .servicespage-services-title {
+    font-size: 4rem;
+  }
+  
+  .servicespage-services-description {
+    font-size: 1.25rem;
+  }
+  
+  .servicespage-process-title {
+    font-size: 4rem;
+  }
+  
+  .servicespage-process-description {
+    font-size: 1.25rem;
+  }
+  
+  .servicespage-cta-title {
+    font-size: 4rem;
+  }
+  
+  .servicespage-cta-description {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .servicespage-hero-layout {
+    flex-direction: row;
+  }
+  
+  .servicespage-hero-text {
+    align-items: flex-start;
+    max-width: 60%;
+    text-align: left;
+  }
+  
+  .servicespage-hero-services {
+    display: block;
+    width: 50%;
+  }
+  
+  .servicespage-services-grid {
+    flex-direction: row;
+  }
+  
+  .servicespage-process-grid {
+    flex-direction: row;
+  }
+  
+  .servicespage-hero-title {
+    font-size: 5rem;
+  }
+  
+  .servicespage-cta-title {
+    font-size: 5rem;
+  }
+}

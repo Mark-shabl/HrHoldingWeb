@@ -1,0 +1,9 @@
+/* Components Styles Index */
+
+/* Import all component styles */
+@import './Header.css';
+@import './Footer.css';
+@import './HomePage.css';
+@import './AboutPage.css';
+@import './ServicesPage.css';
+@import './ContactPage.css';
