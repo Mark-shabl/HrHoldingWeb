@@ -1,0 +1,478 @@
+/* AboutPage Component Styles */
+
+.aboutpage-container {
+  padding-top: 100px;
+}
+
+/* Hero Section */
+.aboutpage-hero {
+  min-height: 80vh;
+  background: var(--beige-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutpage-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(0px);
+  transition: transform 0.3s ease;
+}
+
+.aboutpage-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.aboutpage-hero-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80vh;
+  gap: 3rem;
+}
+
+.aboutpage-hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 100%;
+  text-align: center;
+}
+
+.aboutpage-hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: var(--navy-deep);
+  text-align: center;
+}
+
+.aboutpage-hero-description {
+  font-size: 1.125rem;
+  color: var(--gray-medium);
+  text-align: center;
+  max-width: 600px;
+}
+
+.aboutpage-hero-subtitle {
+  font-size: 1rem;
+  color: var(--gray-dark);
+  text-align: center;
+  max-width: 500px;
+}
+
+.aboutpage-hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.aboutpage-hero-values {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: none;
+  padding: 0 1rem;
+}
+
+.aboutpage-value-card {
+  position: absolute;
+  background: var(--white-pure);
+  border: 1px solid var(--beige-dusty);
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 200px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-subtle);
+}
+
+.aboutpage-value-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.aboutpage-value-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.aboutpage-value-icon {
+  font-size: 2rem;
+}
+
+.aboutpage-value-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.125rem;
+  color: var(--navy-deep);
+}
+
+.aboutpage-value-description {
+  font-size: 0.875rem;
+  color: var(--gray-medium);
+}
+
+/* Mission Section */
+.aboutpage-mission {
+  padding: 6rem 0;
+  background: var(--beige-dusty);
+  position: relative;
+}
+
+.aboutpage-mission-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.aboutpage-mission-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  min-height: 500px;
+}
+
+.aboutpage-mission-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 100%;
+  text-align: center;
+}
+
+.aboutpage-mission-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: var(--terracotta);
+  text-align: center;
+}
+
+.aboutpage-mission-description {
+  font-size: 1.125rem;
+  color: var(--navy-deep);
+  text-align: center;
+  max-width: 600px;
+}
+
+.aboutpage-mission-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.aboutpage-mission-feature {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.aboutpage-mission-feature-icon {
+  background: var(--white-pure);
+  border: 1px solid var(--beige-dusty);
+  border-radius: 50%;
+  padding: 0.75rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.aboutpage-mission-feature-icon-text {
+  font-size: 1.125rem;
+}
+
+.aboutpage-mission-feature-text {
+  color: var(--navy-deep);
+}
+
+.aboutpage-mission-achievements {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutpage-mission-achievements-card {
+  background: var(--white-pure);
+  border: 1px solid var(--beige-dusty);
+  border-radius: 8px;
+  padding: 2rem;
+  width: 100%;
+  box-shadow: var(--shadow-subtle);
+}
+
+.aboutpage-mission-achievements-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.aboutpage-mission-achievements-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.25rem;
+  color: var(--terracotta);
+}
+
+.aboutpage-mission-achievements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: stretch;
+  width: 100%;
+}
+
+.aboutpage-mission-achievement {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.aboutpage-mission-achievement-label {
+  color: var(--navy-deep);
+}
+
+.aboutpage-mission-achievement-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.125rem;
+  color: var(--terracotta);
+}
+
+/* Team Section */
+.aboutpage-team {
+  padding: 6rem 0;
+  background: var(--beige-light);
+  position: relative;
+}
+
+.aboutpage-team-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.aboutpage-team-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.aboutpage-team-header {
+  text-align: center;
+}
+
+.aboutpage-team-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: var(--navy-deep);
+}
+
+.aboutpage-team-description {
+  font-size: 1.125rem;
+  color: var(--gray-medium);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.aboutpage-team-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+}
+
+.aboutpage-team-member {
+  flex: 1;
+  max-width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.aboutpage-team-member:hover {
+  transform: translateY(-10px);
+}
+
+.aboutpage-team-member-card {
+  background: var(--white-pure);
+  border: 1px solid var(--beige-dusty);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  height: 100%;
+  box-shadow: var(--shadow-subtle);
+}
+
+.aboutpage-team-member-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.aboutpage-team-member-avatar {
+  font-size: 4rem;
+}
+
+.aboutpage-team-member-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.aboutpage-team-member-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.25rem;
+  color: var(--navy-deep);
+}
+
+.aboutpage-team-member-position {
+  color: var(--terracotta);
+  font-weight: 600;
+}
+
+.aboutpage-team-member-experience {
+  font-size: 0.875rem;
+  color: var(--gray-medium);
+}
+
+/* CTA Section */
+.aboutpage-cta {
+  padding: 6rem 0;
+  background: var(--navy-deep);
+  position: relative;
+}
+
+.aboutpage-cta-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.aboutpage-cta-layout {
+  text-align: center;
+}
+
+.aboutpage-cta-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.aboutpage-cta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.aboutpage-cta-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: var(--beige-light);
+}
+
+.aboutpage-cta-description {
+  font-size: 1.125rem;
+  color: var(--beige-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.aboutpage-cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .aboutpage-hero-title {
+    font-size: 4rem;
+  }
+  
+  .aboutpage-hero-description {
+    font-size: 1.25rem;
+  }
+  
+  .aboutpage-mission-title {
+    font-size: 4rem;
+  }
+  
+  .aboutpage-mission-description {
+    font-size: 1.25rem;
+  }
+  
+  .aboutpage-team-title {
+    font-size: 4rem;
+  }
+  
+  .aboutpage-team-description {
+    font-size: 1.25rem;
+  }
+  
+  .aboutpage-cta-title {
+    font-size: 4rem;
+  }
+  
+  .aboutpage-cta-description {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .aboutpage-hero-layout {
+    flex-direction: row;
+  }
+  
+  .aboutpage-hero-text {
+    align-items: flex-start;
+    max-width: 60%;
+    text-align: left;
+  }
+  
+  .aboutpage-hero-values {
+    display: block;
+    width: 50%;
+  }
+  
+  .aboutpage-mission-layout {
+    flex-direction: row;
+  }
+  
+  .aboutpage-mission-text {
+    align-items: flex-start;
+    max-width: 60%;
+    text-align: left;
+  }
+  
+  .aboutpage-mission-features {
+    align-items: flex-start;
+  }
+  
+  .aboutpage-mission-achievements-card {
+    width: 400px;
+  }
+  
+  .aboutpage-team-grid {
+    flex-direction: row;
+  }
+  
+  .aboutpage-hero-title {
+    font-size: 5rem;
+  }
+  
+  .aboutpage-cta-title {
+    font-size: 5rem;
+  }
+}

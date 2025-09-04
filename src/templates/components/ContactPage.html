@@ -1,0 +1,272 @@
+<!-- ContactPage Component Template -->
+<div class="contactpage-container">
+  <!-- Hero Section -->
+  <section class="contactpage-hero">
+    <!-- Animated Background -->
+    <div class="contactpage-hero-background">
+      <svg width="100%" height="100%" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg" opacity="0.1">
+        <defs>
+          <pattern id="contact-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="var(--navy-deep)" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#contact-grid)" />
+      </svg>
+    </div>
+    
+    <div class="contactpage-hero-content">
+      <div class="contactpage-hero-layout">
+        <!-- Main Content -->
+        <div class="contactpage-hero-text">
+          <h1 class="contactpage-hero-title">Свяжитесь с нами</h1>
+          
+          <p class="contactpage-hero-description">
+            Готовы обсудить ваш проект? Мы всегда рады новым клиентам 
+            и готовы предложить индивидуальное решение.
+          </p>
+          
+          <p class="contactpage-hero-subtitle">
+            Профессиональный подход к каждому клиенту и гарантированный результат.
+          </p>
+          
+          <div class="contactpage-hero-buttons">
+            <button class="premium-button">Заполнить форму</button>
+            <button class="accent-button">Позвонить сейчас</button>
+          </div>
+        </div>
+        
+        <!-- Contact Cards -->
+        <div class="contactpage-hero-contacts">
+          <div class="contactpage-hero-contact-card" style="top: 10%; left: 5%;">
+            <div class="contactpage-hero-contact-content">
+              <div class="contactpage-hero-contact-icon">📞</div>
+              <h3 class="contactpage-hero-contact-title">Телефон</h3>
+              <p class="contactpage-hero-contact-detail">+7 (495) 123-45-67</p>
+              <p class="contactpage-hero-contact-detail">+7 (495) 123-45-68</p>
+            </div>
+          </div>
+          
+          <div class="contactpage-hero-contact-card" style="top: 25%; right: 10%;">
+            <div class="contactpage-hero-contact-content">
+              <div class="contactpage-hero-contact-icon">✉️</div>
+              <h3 class="contactpage-hero-contact-title">Email</h3>
+              <p class="contactpage-hero-contact-detail">info@hr-holding.ru</p>
+              <p class="contactpage-hero-contact-detail">recruitment@hr-holding.ru</p>
+            </div>
+          </div>
+          
+          <div class="contactpage-hero-contact-card" style="bottom: 30%; left: 15%;">
+            <div class="contactpage-hero-contact-content">
+              <div class="contactpage-hero-contact-icon">📍</div>
+              <h3 class="contactpage-hero-contact-title">Адрес</h3>
+              <p class="contactpage-hero-contact-detail">Москва, ул. Примерная, д. 1</p>
+              <p class="contactpage-hero-contact-detail">БЦ "Примерный", офис 100</p>
+            </div>
+          </div>
+          
+          <div class="contactpage-hero-contact-card" style="bottom: 15%; right: 5%;">
+            <div class="contactpage-hero-contact-content">
+              <div class="contactpage-hero-contact-icon">🕒</div>
+              <h3 class="contactpage-hero-contact-title">Время работы</h3>
+              <p class="contactpage-hero-contact-detail">Пн-Пт: 9:00 - 18:00</p>
+              <p class="contactpage-hero-contact-detail">Сб-Вс: по договоренности</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="contactpage-form">
+    <div class="contactpage-form-content">
+      <div class="contactpage-form-layout">
+        <!-- Contact Form -->
+        <div class="contactpage-form-section">
+          <div class="contactpage-form-card">
+            <div class="contactpage-form-content-wrapper">
+              <div class="contactpage-form-header">
+                <h2 class="contactpage-form-title">Отправить сообщение</h2>
+                <p class="contactpage-form-description">
+                  Заполните форму, и мы свяжемся с вами в течение 24 часов
+                </p>
+              </div>
+
+              <form>
+                <div class="contactpage-form-fields">
+                  <div class="contactpage-form-field">
+                    <label class="contactpage-form-label">Имя *</label>
+                    <input 
+                      type="text" 
+                      name="name" 
+                      class="contactpage-form-input" 
+                      placeholder="Ваше имя" 
+                      required 
+                    />
+                  </div>
+
+                  <div class="contactpage-form-field">
+                    <label class="contactpage-form-label">Email *</label>
+                    <input 
+                      type="email" 
+                      name="email" 
+                      class="contactpage-form-input" 
+                      placeholder="your@email.com" 
+                      required 
+                    />
+                  </div>
+
+                  <div class="contactpage-form-field">
+                    <label class="contactpage-form-label">Телефон</label>
+                    <input 
+                      type="tel" 
+                      name="phone" 
+                      class="contactpage-form-input" 
+                      placeholder="+7 (___) ___-__-__" 
+                    />
+                  </div>
+
+                  <div class="contactpage-form-field">
+                    <label class="contactpage-form-label">Компания</label>
+                    <input 
+                      type="text" 
+                      name="company" 
+                      class="contactpage-form-input" 
+                      placeholder="Название компании" 
+                    />
+                  </div>
+
+                  <div class="contactpage-form-field">
+                    <label class="contactpage-form-label">Сообщение *</label>
+                    <textarea 
+                      name="message" 
+                      class="contactpage-form-textarea" 
+                      placeholder="Расскажите о ваших потребностях..." 
+                      rows="4" 
+                      required
+                    ></textarea>
+                  </div>
+
+                  <button type="submit" class="accent-button contactpage-form-submit">
+                    Отправить сообщение
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="contactpage-info-section">
+          <div class="contactpage-info-content">
+            <div class="contactpage-info-header">
+              <h2 class="contactpage-info-title">Почему выбирают нас</h2>
+              <p class="contactpage-info-description">
+                Мы всегда готовы ответить на ваши вопросы и обсудить 
+                возможности сотрудничества.
+              </p>
+            </div>
+
+            <div class="contactpage-info-features">
+              <div class="contactpage-info-feature">
+                <div class="contactpage-info-feature-card">
+                  <div class="contactpage-info-feature-content">
+                    <div class="contactpage-info-feature-icon">
+                      <span class="contactpage-info-feature-icon-text">⚡</span>
+                    </div>
+                    <div class="contactpage-info-feature-info">
+                      <h3 class="contactpage-info-feature-title">Быстрый ответ</h3>
+                      <p class="contactpage-info-feature-description">Отвечаем в течение 24 часов</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="contactpage-info-feature">
+                <div class="contactpage-info-feature-card">
+                  <div class="contactpage-info-feature-content">
+                    <div class="contactpage-info-feature-icon">
+                      <span class="contactpage-info-feature-icon-text">🎯</span>
+                    </div>
+                    <div class="contactpage-info-feature-info">
+                      <h3 class="contactpage-info-feature-title">Индивидуальный подход</h3>
+                      <p class="contactpage-info-feature-description">Каждый проект уникален</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="contactpage-info-feature">
+                <div class="contactpage-info-feature-card">
+                  <div class="contactpage-info-feature-content">
+                    <div class="contactpage-info-feature-icon">
+                      <span class="contactpage-info-feature-icon-text">🛡️</span>
+                    </div>
+                    <div class="contactpage-info-feature-info">
+                      <h3 class="contactpage-info-feature-title">Конфиденциальность</h3>
+                      <p class="contactpage-info-feature-description">Полная защита данных</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="contactpage-info-feature">
+                <div class="contactpage-info-feature-card">
+                  <div class="contactpage-info-feature-content">
+                    <div class="contactpage-info-feature-icon">
+                      <span class="contactpage-info-feature-icon-text">📈</span>
+                    </div>
+                    <div class="contactpage-info-feature-info">
+                      <h3 class="contactpage-info-feature-title">Проверенные результаты</h3>
+                      <p class="contactpage-info-feature-description">500+ успешных проектов</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contactpage-info-cta">
+              <div class="contactpage-info-cta-content">
+                <h3 class="contactpage-info-cta-title">Быстрая связь</h3>
+                <p class="contactpage-info-cta-description">
+                  Нужна срочная консультация? Звоните нам прямо сейчас!
+                </p>
+                <button class="accent-button contactpage-info-cta-button">
+                  📞 Позвонить сейчас
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="contactpage-map">
+    <div class="contactpage-map-content">
+      <div class="contactpage-map-layout">
+        <div class="contactpage-map-content-wrapper">
+          <div class="contactpage-map-header">
+            <h2 class="contactpage-map-title">Как нас найти</h2>
+            <p class="contactpage-map-description">
+              Мы находимся в центре Москвы, в удобном бизнес-центре
+            </p>
+          </div>
+          
+          <div class="contactpage-map-container">
+            <div class="contactpage-map-placeholder">
+              <div class="contactpage-map-placeholder-icon">🗺️</div>
+              <div class="contactpage-map-placeholder-info">
+                <h3 class="contactpage-map-placeholder-title">Интерактивная карта</h3>
+                <p class="contactpage-map-placeholder-address">
+                  Москва, ул. Примерная, д. 1, БЦ "Примерный", офис 100
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

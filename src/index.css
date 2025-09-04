@@ -1,3 +1,39 @@
+/* Импорт премиальных шрифтов */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Импорт стилей компонентов */
+@import './styles/components/index.css';
+
+/* CSS переменные для премиальной цветовой схемы */
+:root {
+  /* Основные бежевые тона */
+  --beige-light: #F8F5F0; /* слоновая кость */
+  --beige-dusty: #E6DAC8; /* светлый пыльный беж */
+  --beige-warm: #D5BDA8; /* теплый средний беж */
+  --beige-dark: #A38F78; /* темный, почти серо-бежевый */
+  
+  /* Акцентные цвета */
+  --navy-deep: #0A2540; /* глубокий темно-синий */
+  --charcoal: #1A1A1A; /* угольно-черный */
+  --terracotta: #C45C2A; /* терракотовый акцент */
+  
+  /* Нейтральные тона */
+  --white-pure: #FFFFFF;
+  --gray-light: #F5F5F5;
+  --gray-medium: #8B8B8B;
+  --gray-dark: #4A4A4A;
+  
+  /* Тени для минимализма */
+  --shadow-subtle: 0 2px 8px rgba(10, 37, 64, 0.08);
+  --shadow-medium: 0 4px 16px rgba(10, 37, 64, 0.12);
+  --shadow-strong: 0 8px 32px rgba(10, 37, 64, 0.16);
+  
+  /* Градиенты */
+  --gradient-beige: linear-gradient(135deg, var(--beige-light) 0%, var(--beige-dusty) 100%);
+  --gradient-navy: linear-gradient(135deg, var(--navy-deep) 0%, var(--charcoal) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--terracotta) 0%, #B84A1A 100%);
+}
+
 /* Сброс стилей и базовые настройки */
 * {
   margin: 0;
@@ -7,37 +43,239 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
+  background: var(--beige-light);
+  color: var(--navy-deep);
+  overflow-x: hidden;
+  font-weight: 400;
 }
 
 /* Убираем стандартные стили для ссылок */
 a {
   text-decoration: none;
   color: inherit;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Стили для скроллбара */
+/* Минималистичный скроллбар */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--beige-light);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: var(--beige-warm);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--beige-dark);
+}
+
+/* Утилитарные классы для минимализма */
+.minimal-card {
+  background: var(--white-pure);
+  border: 1px solid var(--beige-dusty);
+  border-radius: 8px;
+  box-shadow: var(--shadow-subtle);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.minimal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--beige-warm);
+}
+
+.premium-button {
+  background: var(--navy-deep);
+  color: var(--white-pure);
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.premium-button:hover {
+  background: var(--charcoal);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-medium);
+}
+
+.accent-button {
+  background: var(--terracotta);
+  color: var(--white-pure);
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.accent-button:hover {
+  background: #B84A1A;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Типографика */
+.heading-premium {
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--navy-deep);
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+
+.text-premium {
+  font-family: 'Inter', sans-serif;
+  color: var(--navy-deep);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.text-secondary {
+  color: var(--gray-dark);
+  font-weight: 400;
+}
+
+/* Анимации для минимализма */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes counterSpin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes underlineExpand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s ease-out;
+}
+
+.counter-spin {
+  animation: counterSpin 0.6s ease-out;
+}
+
+/* Эффект подчеркивания */
+.underline-hover {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.underline-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--terracotta);
+  transition: width 0.3s ease;
+}
+
+.underline-hover:hover::after {
+  width: 100%;
+}
+
+/* Параллакс эффект */
+.parallax-element {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .minimal-card {
+    border-radius: 6px;
+  }
+  
+  .premium-button,
+  .accent-button {
+    border-radius: 3px;
+  }
+  
+  /* Дополнительные отступы для мобильных устройств */
+  body {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 }

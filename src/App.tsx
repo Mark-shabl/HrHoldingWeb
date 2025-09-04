@@ -9,7 +9,7 @@ import ContactPage from './pages/ContactPage'
 
 function App() {
   return (
-    <Box minH="100vh" display="flex" flexDirection="column">
+    <Box minH="100vh" display="flex" flexDirection="column" bg="var(--beige-light)">
       <Header />
       <Box flex="1">
         <Routes>
